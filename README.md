@@ -1,56 +1,54 @@
-# DPG Engenharia Mecânica — Projetos HVAC
+# DPG Engenharia Mecânica — HVAC
 
-Site institucional estático da DPG Engenharia Mecânica. Apresenta exclusivamente serviços de projetos HVAC e documentação técnica.
+Site estático da frente de **projetos de climatização, ventilação, exaustão, água gelada, refrigeração, gases e proteção contra incêndio** da DPG Engenharia Mecânica (Eng. Denys Pinto Gonçalves, CREA-MG 142398574-5, Juiz de Fora/MG).
 
-**Site público:** https://muitozika12.github.io/site-hvac/
-
-## Escopo e informações confirmadas
-
-- A atuação apresentada é de desenvolvimento de projetos HVAC e documentação técnica.
-- Não são oferecidos instalação, execução, fornecimento de equipamentos ou manutenção.
-- Contato por WhatsApp: `(32) 99904-2269` (`5532999042269`).
-- Responsável técnico informado: Denys Pinto Gonçalves — CREA-MG `142398574-5`.
-- A página de contato não envia nem armazena dados em servidor. O briefing monta uma mensagem e abre o WhatsApp.
-- O blog contém três artigos informativos. Eles distinguem desenvolvimento de projeto das etapas de execução e não prometem conformidade, certificações ou resultados.
-
-## Melhorias desta versão
-
-- Redesign editorial/cinematográfico com grafite, azul técnico, tipografia expressiva e imagem original local.
-- Layout responsivo com prioridade para telas móveis, menu acessível e navegação entre páginas estáticas.
-- Scroll reveal com alternativa para `prefers-reduced-motion`.
-- Formulário de briefing com validação nativa e encaminhamento ao WhatsApp.
-- Blog navegável com índice e três artigos próprios em HTML.
-- Links internos relativos, URLs canônicas, metadados Open Graph, sitemap XML e robots.txt alinhados ao domínio publicado.
+Sem framework e sem etapa de build: HTML, CSS e JavaScript puros. Basta publicar a pasta (GitHub Pages, por exemplo).
 
 ## Estrutura
 
-```text
-.
-├── index.html                         # Landing page da DPG
-├── styles.css                         # Estilos compartilhados e responsivos
-├── script.js                          # Menu, reveal e formulário para WhatsApp
-├── favicon.svg                        # Ícone do site
-├── logo.svg                           # Logotipo vetorial existente
-├── assets/
-│   ├── hvac-hero-optimized.jpg        # Imagem ilustrativa otimizada para o hero
-├── sitemap.xml                        # Endereços públicos indexáveis
-├── robots.txt                         # Regras de rastreamento e sitemap
-└── blog/
-    ├── index.html                     # Índice do caderno técnico
-    ├── projeto-hvac.html              # Artigo sobre escopo de projeto HVAC
-    ├── ventilacao-renovacao-ar.html   # Artigo sobre ventilação e renovação do ar
-    └── coordenacao-interdisciplinar.html # Artigo sobre coordenação entre disciplinas
+| Arquivo | O que é |
+| --- | --- |
+| `index.html` | Página inicial: capa com desenho técnico animado, serviços, entregas, normas, processo, responsável técnico, caderno e contato |
+| `styles.css` | Folha de estilos, comentada e dividida em seções numeradas. **Idêntica nos dois sites** (site-consultoria e site-hvac) |
+| `script.js` | Menu do celular, animação de traçado dos desenhos, formulário que abre o WhatsApp. **Idêntico nos dois sites** |
+| `assets/` | Logo oficial (`dpg-monograma.svg`, `dpg-assinatura.svg`), foto e imagem de compartilhamento (`capa-social.png`) |
+| `blog/` | Caderno técnico: índice e artigos |
+| `ferramentas/` | Scripts Python que geram os desenhos técnicos (SVG) embutidos no `index.html` |
+
+## Identidade visual
+
+Segue o Manual de Marca DPG (out/2026): preto `#000000`, grafite `#111820`, azul técnico `#245BDB`, branco e cinzas de apoio `#F2F4F7` / `#5B6470`; tipografia Arial; grafismo diagonal azul. As cores ficam em variáveis no topo do `styles.css` (`:root`). O logo é sempre o arquivo oficial, nunca redigitado.
+
+O atributo `data-site` no `<body>` define o tema: `consultoria` (capa clara) ou `hvac` (capa escura).
+
+## Como alterar
+
+- **Textos, serviços e normas:** direto no `index.html`. Cada seção tem um comentário de abertura.
+- **Número do WhatsApp:** variável `WHATSAPP` no topo do `script.js` e links `wa.me` no HTML.
+- **Cores e espaçamentos:** variáveis em `:root`, no início do `styles.css`.
+- **Desenhos técnicos:** são SVG gerados por código. No `index.html` cada um fica entre os marcadores `<!-- DESENHO:nome -->` e `<!-- /DESENHO:nome -->`. Para mudar um desenho, edite o script e rode de novo na raiz do repositório:
+
+```
+python3 ferramentas/gerar_hvac.py index.html              # desenho da capa
+python3 ferramentas/gerar_pranchas.py hvac index.html        # figuras da seção "Entregas"
 ```
 
-As páginas do blog reutilizam `../styles.css` e `../script.js`. A implementação não exige build nem dependências locais.
+  `ferramentas/desenho.py` é a pequena biblioteca comum (linhas, cotas com setas, balões, sólidos).
+- **Novo artigo:** copie um arquivo de `blog/`, troque título, descrição e texto, e acrescente o link em `blog/index.html`, no `index.html` (seção "Caderno técnico") e no `sitemap.xml`.
 
-## Publicação no GitHub Pages
+Ao mudar `styles.css` ou `script.js`, copie o arquivo para o outro site para manter os dois iguais.
 
-O site é publicado pela branch `main`, pasta `/(root)`, no endereço `https://muitozika12.github.io/site-hvac/`. O campo homepage do repositório, os canônicos, os metadados sociais, o sitemap e o robots.txt devem permanecer alinhados se o domínio ou a configuração de publicação mudar.
+## Cuidados de conteúdo
 
-## Avisos antes da divulgação
+- Os desenhos e valores são ilustrativos; não representam cliente ou obra específica.
+- Não publicar prazos, quantidade de projetos, certificações ou depoimentos que não possam ser comprovados.
+- As normas citadas devem ser conferidas na edição vigente antes de cada revisão do site.
+- A DPG projeta e documenta; instalação e fornecimento de equipamentos não são oferecidos neste site.
 
-- Revisar se o escopo, as entregas e as atribuições descritas correspondem ao serviço efetivamente contratado e ofertado.
-- Não adicionar alegações de clientes, cases, depoimentos, economias, ROI, preços, certificações, garantias de conformidade ou capacidades sem confirmação documental.
-- A imagem hero incluída é ilustrativa e não representa obra, instalação ou case da DPG. Substituições devem ter direitos e adequação confirmados.
-- O formulário depende da abertura do WhatsApp no navegador do visitante.
+## Testar no computador
+
+```
+python3 -m http.server 8000
+```
+
+Depois abra `http://localhost:8000`.

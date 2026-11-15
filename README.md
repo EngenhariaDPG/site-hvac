@@ -1,36 +1,56 @@
-# DPG HVAC — Projetos de Engenharia
+# DPG Engenharia Mecânica — Projetos HVAC
 
-Site institucional da DPG Engenharia Mecânica, especializado no desenvolvimento de projetos HVAC.
+Site institucional estático da DPG Engenharia Mecânica. Apresenta exclusivamente serviços de projetos HVAC e documentação técnica.
 
-## Posicionamento
-A DPG apresenta serviços de engenharia e elaboração de projetos. O site não oferece instalação, execução, fornecimento de equipamentos ou manutenção de sistemas.
+**Site público:** https://muitozika12.github.io/site-hvac/
 
-## Soluções apresentadas
-- Projetos de climatização e ar-condicionado.
-- Projetos de ventilação mecânica e renovação de ar.
-- Projetos de exaustão.
-- Detalhamento e documentação técnica HVAC.
-- Projetos para clientes finais e parcerias com arquitetos, construtoras e escritórios de engenharia.
+## Escopo e informações confirmadas
 
-## Identidade visual
-Alinhada ao site DPG Engenharia Mecânica:
-- Grafite: #111820
-- Azul técnico: #245BDB
-- Branco e cinza claro: #FFFFFF / #F2F4F7
-- Logotipo DPG e tipografia Manrope / DM Sans.
+- A atuação apresentada é de desenvolvimento de projetos HVAC e documentação técnica.
+- Não são oferecidos instalação, execução, fornecimento de equipamentos ou manutenção.
+- Contato por WhatsApp: `(32) 99904-2269` (`5532999042269`).
+- Responsável técnico informado: Denys Pinto Gonçalves — CREA-MG `142398574-5`.
+- A página de contato não envia nem armazena dados em servidor. O briefing monta uma mensagem e abre o WhatsApp.
+- O blog contém três artigos informativos. Eles distinguem desenvolvimento de projeto das etapas de execução e não prometem conformidade, certificações ou resultados.
 
-## Funcionalidades
-- Layout responsivo para desktop, tablet e celular.
-- Navegação mobile.
-- Formulário de briefing que prepara uma mensagem e abre o WhatsApp.
-- WhatsApp: 5532999042269.
-- Responsável técnico: Denys Pinto Gonçalves — CREA-MG 142398574-5.
+## Melhorias desta versão
 
-## Publicação
-GitHub Pages: Settings → Pages → Deploy from a branch → main → /(root).
+- Redesign editorial/cinematográfico com grafite, azul técnico, tipografia expressiva e imagem original local.
+- Layout responsivo com prioridade para telas móveis, menu acessível e navegação entre páginas estáticas.
+- Scroll reveal com alternativa para `prefers-reduced-motion`.
+- Formulário de briefing com validação nativa e encaminhamento ao WhatsApp.
+- Blog navegável com índice e três artigos próprios em HTML.
+- Links internos relativos, URLs canônicas, metadados Open Graph, sitemap XML e robots.txt alinhados ao domínio publicado.
 
-## Revisão antes da divulgação
-- Confirmar os escopos, atribuições profissionais e serviços efetivamente ofertados.
-- Substituir imagens ilustrativas por imagens próprias de projetos, quando disponíveis e autorizadas.
-- Conferir disponibilidade e condições de uso das imagens externas.
-- O formulário não armazena dados no site; o usuário escolhe enviar os dados pelo WhatsApp.
+## Estrutura
+
+```text
+.
+├── index.html                         # Landing page da DPG
+├── styles.css                         # Estilos compartilhados e responsivos
+├── script.js                          # Menu, reveal e formulário para WhatsApp
+├── favicon.svg                        # Ícone do site
+├── logo.svg                           # Logotipo vetorial existente
+├── assets/
+│   ├── hvac-hero-optimized.jpg        # Imagem ilustrativa otimizada para o hero
+├── sitemap.xml                        # Endereços públicos indexáveis
+├── robots.txt                         # Regras de rastreamento e sitemap
+└── blog/
+    ├── index.html                     # Índice do caderno técnico
+    ├── projeto-hvac.html              # Artigo sobre escopo de projeto HVAC
+    ├── ventilacao-renovacao-ar.html   # Artigo sobre ventilação e renovação do ar
+    └── coordenacao-interdisciplinar.html # Artigo sobre coordenação entre disciplinas
+```
+
+As páginas do blog reutilizam `../styles.css` e `../script.js`. A implementação não exige build nem dependências locais.
+
+## Publicação no GitHub Pages
+
+O site é publicado pela branch `main`, pasta `/(root)`, no endereço `https://muitozika12.github.io/site-hvac/`. O campo homepage do repositório, os canônicos, os metadados sociais, o sitemap e o robots.txt devem permanecer alinhados se o domínio ou a configuração de publicação mudar.
+
+## Avisos antes da divulgação
+
+- Revisar se o escopo, as entregas e as atribuições descritas correspondem ao serviço efetivamente contratado e ofertado.
+- Não adicionar alegações de clientes, cases, depoimentos, economias, ROI, preços, certificações, garantias de conformidade ou capacidades sem confirmação documental.
+- A imagem hero incluída é ilustrativa e não representa obra, instalação ou case da DPG. Substituições devem ter direitos e adequação confirmados.
+- O formulário depende da abertura do WhatsApp no navegador do visitante.

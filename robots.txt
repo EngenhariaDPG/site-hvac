@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://muitozika12.github.io/site-hvac/sitemap.xml
